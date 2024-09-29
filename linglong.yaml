@@ -1,0 +1,30 @@
+version: "1"
+
+package:
+  id: io.github.MetaPathwaysGUI
+  name: MetaPathwaysGUI
+  version: 0.3.0.1
+  kind: app
+  description: |
+    drives the MetaPathways 2.0 python codebase
+
+command:
+  - /opt/apps/io.github.MetaPathwaysGUI/files/bin/MetaPathways3.0
+
+base: org.deepin.foundation/23.0.0
+runtime: org.deepin.Runtime/23.0.1
+
+sources:
+  - kind: git
+    url: https://github.com/hallamlab/MetaPathwaysGUI.git
+    version: master
+    commit: 2516e23ef1dd21b7ca945a725ad04880b678f82a
+
+build: |
+  cd /project/linglong/sources/MetaPathwaysGUI.git
+  git apply ../../../0001-install.patch
+  git apply ../../../0002-install.patch
+  cp images/logo.png images/MetaPathways3.0.png
+  qmake -makefile PREFIX=${PREFIX} LIB_INSTALL_DIR=${PREFIX}/lib/${TRIPLET}
+  make -j$(nproc)
+  make install

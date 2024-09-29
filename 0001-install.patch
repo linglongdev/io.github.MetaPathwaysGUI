@@ -1,0 +1,36 @@
+From 64ea7042c89d163b5c550144bfafede9d3caa369 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 19 Sep 2024 13:54:48 +0800
+Subject: [PATCH] install
+
+---
+ displaywidgets/createwidgets.cpp | 2 +-
+ helper/qcustomplot.h             | 1 +
+ 2 files changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/displaywidgets/createwidgets.cpp b/displaywidgets/createwidgets.cpp
+index 5e4ebd1..fdd48fc 100644
+--- a/displaywidgets/createwidgets.cpp
++++ b/displaywidgets/createwidgets.cpp
+@@ -1,5 +1,5 @@
+ #include "createwidgets.h"
+-
++#include <QHeaderView>
+ RunDataStats *CreateWidgets::rundatastats = 0 ;
+ QTableView *CreateWidgets::statTableView = 0;
+ StatsQGroupBox *CreateWidgets::statTableCompleteView = 0;
+diff --git a/helper/qcustomplot.h b/helper/qcustomplot.h
+index 6d01dd2..579fcfa 100755
+--- a/helper/qcustomplot.h
++++ b/helper/qcustomplot.h
+@@ -50,6 +50,7 @@
+ #include <QMargins>
+ #include <qmath.h>
+ #include <limits>
++#include <QPainterPath>
+ #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+ #  include <qnumeric.h>
+ #  include <QPrinter>
+-- 
+2.43.4
+

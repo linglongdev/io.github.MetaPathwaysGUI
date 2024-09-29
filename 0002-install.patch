@@ -1,0 +1,48 @@
+From cca213dece6e131642f9f36dcdc3f973b5a6b2d0 Mon Sep 17 00:00:00 2001
+From: wjyrich <1071633242@qq.com>
+Date: Thu, 19 Sep 2024 13:58:16 +0800
+Subject: [PATCH] install
+
+---
+ MetaPathways2.pro       |  7 +++++++
+ MetaPathways3.0.desktop | 11 +++++++++++
+ 2 files changed, 18 insertions(+)
+ create mode 100644 MetaPathways3.0.desktop
+
+diff --git a/MetaPathways2.pro b/MetaPathways2.pro
+index f7e45a7..a8260be 100755
+--- a/MetaPathways2.pro
++++ b/MetaPathways2.pro
+@@ -198,3 +198,10 @@ RC_FILE += MetaPathways2.rc
+ ICON += MetaPathways2.icns
+ 
+ 
++target.path = $$PREFIX/bin
++desktop.files = MetaPathways3.0.desktop
++desktop.path = $$PREFIX/share/applications/
++icons.path = $$PREFIX/share/icons/hicolor/apps/
++icons.files = images/MetaPathways3.0.png
++
++INSTALLS += target desktop icons
+\ No newline at end of file
+diff --git a/MetaPathways3.0.desktop b/MetaPathways3.0.desktop
+new file mode 100644
+index 0000000..92755ae
+--- /dev/null
++++ b/MetaPathways3.0.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=Accessibility;Qt;Utility;
++Exec=MetaPathways3.0
++Name=MetaPathways3.0
++Name[zh_CN]=MetaPathways3.0
++Icon=MetaPathways3.0
++StartupNotify=false
++Terminal=false
++Type=Application
++GenericName=MetaPathways3.0
++Version=1.0
+\ No newline at end of file
+-- 
+2.43.4
+
